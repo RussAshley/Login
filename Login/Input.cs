@@ -17,35 +17,38 @@ namespace Login
             InitializeComponent();
         }
 
-        static Class1 loginUser0 = new Class1("Bob", "Bobby", 44, "bobtheblob", "1 street road", 3);
-        static Class1 loginUser1 = new Class1("Janet", "Jellyface", 48, "nobbynob", "2 street road", 3);
-        static Class1 loginUser2 = new Class1("Brian", "BigBri", 25, "helloworld", "3 street road", 3);
-        static Class1 loginUser3 = new Class1("Freya", "freshfrey", 26, "dynamite3", "4 street road", 3);
-        static Class1 loginUser4 = new Class1("shirley", "sourshirl", 32, "shirley2", "5 street road", 3);
+        static UserDetails loginUser0 = new UserDetails("Bob", "Bobby", 44, "bobtheblob", "1 street road", 3);
+        static UserDetails loginUser1 = new UserDetails("Janet", "Jellyface", 48, "nobbynob", "2 street road", 3);
+        static UserDetails loginUser2 = new UserDetails("Brian", "BigBri", 25, "helloworld", "3 street road", 3);
+        static UserDetails loginUser3 = new UserDetails("Freya", "freshfrey", 26, "dynamite3", "4 street road", 3);
+        static UserDetails loginUser4 = new UserDetails("shirley", "sourshirl", 32, "shirley2", "5 street road", 3);
 
-        Class1[] loginArray = new Class1[] { loginUser0, loginUser1, loginUser2, loginUser3, loginUser4 };
+        UserDetails[] loginArray = new UserDetails[] { loginUser0, loginUser1, loginUser2, loginUser3, loginUser4 };
 
-        int arrIndex = 0;
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
             for (int i = 0; i <= loginArray.Length - 1; i++)
-                if (inputUserName.Text == loginArray[i].UserName & Inputpassword.Text == loginArray[i].Password)
-            {
-                    Details dtl = new Details();
+               if (inputUserName.Text == loginArray[i].UserName & Inputpassword.Text == loginArray[i].Password)
+                {
+                    Details dtl = new Details(loginArray[i]);
                     dtl.Show();
-               // Details details = new Details(loginArray[i]);
-               // details.Show();
-            }
-                else
+                    
+                }
+                else if (inputUserName.Text == loginArray[i].UserName || Inputpassword.Text == loginArray[i].Password)
                 {  
                     inputUserName.Clear();
                     Inputpassword.Clear();
                     MessageBox.Show("Details Incorrect");
+                    
                 }
+
+                 
+
         }
        
-       // Details details = new Details(); 
+       
     }
     
 }

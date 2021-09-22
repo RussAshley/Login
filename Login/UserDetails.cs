@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Login
 {
-    class Class1
+    public class UserDetails
     {
         private String name;
         private String userName;
@@ -13,13 +13,13 @@ namespace Login
         private String Address;
         private int colourScheme;
 
-        public Class1(string name, string userName, int age, string password, string address, int colourScheme)
+        public UserDetails(string name, string userName, int age, string password, string address, int colourScheme)
         {
             this.Name = name;
             this.UserName = userName;
             this.Age = age;
             this.Password = password;
-            Address1 = address;
+            this.Address = address;
             this.ColourScheme = colourScheme;
         }
 
